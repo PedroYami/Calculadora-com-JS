@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="calculadora">
+        <div class="telinha" id="telinha">0</div>
+            <div class="botoes">
+                <button class="botao" onclick="mostrarNaTela('7')">7</button>
+                <button class="botao" onclick="mostrarNaTela('8')">8</button>
+                <button class="botao" onclick="mostrarNaTela('9')">9</button>
+                <button class="botao" onclick="mostrarNaTela('/')">/</button>
+                <button class="botao" onclick="mostrarNaTela('4')">4</button>
+                <button class="botao" onclick="mostrarNaTela('5')">5</button>
+                <button class="botao" onclick="mostrarNaTela('6')">6</button>
+                <button class="botao" onclick="mostrarNaTela('*')">*</button>
+                <button class="botao" onclick="mostrarNaTela('1')">1</button>
+                <button class="botao" onclick="mostrarNaTela('2')">2</button>
+                <button class="botao" onclick="mostrarNaTela('3')">3</button>
+                <button class="botao" onclick="mostrarNaTela('-')">-</button>
+                <button class="botao" onclick="mostrarNaTela('0')">0</button>
+                <button class="botao" onclick="mostrarNaTela('.')">.</button>
+                <button class="botao" onclick="apagar()">C</button>
+                <button class="botao" onclick="mostrarNaTela('+')">+</button>
+                <button class="botao" onclick="calcular()">=</button>
+            </div>
+    </div>
+
+    <script>
+        function mostrarNaTela(valor) {
+            document.getElementById('telinha').textContent += valor;
+        }
+
+        function apagar() {
+            document.getElementById('telinha').textContent = '';
+        }
+
+        function calcular() {
+            let expressao = document.getElementById('telinha').textContent;
+            let resultado = eval(expressao);
+            document.getElementById('telinha').textContent = resultado;
+        }
+    </script>
+</body>
+</html>
